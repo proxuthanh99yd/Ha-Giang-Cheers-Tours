@@ -1,0 +1,95 @@
+@import url("https://fonts.cdnfonts.com/css/heavitas");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+@import url("https://fonts.cdnfonts.com/css/tomatoes");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gray-lighter: #a6b6b6;
+    --gray-light: #889595;
+    --gray-default: #727272;
+    --gray-dark: #404b4b;
+
+    --primary-dark: #2e2e2e;
+    --secondary-light: #c4d1d0;
+
+    --orange-default: #ee6529;
+
+    --brown-default: #b34b1e;
+
+    --yellow-lighter: #f1deb4;
+    --yellow-light: #edd08f;
+    --yellow-default: #ffd44d;
+
+    --green-lighter: #1e787d;
+    --green-default: #005d63;
+    --green-dark: #00383c;
+
+    --container-size: 1170px;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .main-container {
+    @apply w-container-size mx-auto max-w-full px-6 xl:px-0;
+  }
+
+  .triangle {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 0px 100px 471px;
+    border-color: transparent transparent #000 transparent;
+    transform: rotate(0deg);
+  }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #f1deb4;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: calc(100% / 3);
+  height: 4px;
+  background: #1e787d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: calc(100% / 3);
+  height: 4px;
+  background: #1e787d;
+  cursor: pointer;
+}
