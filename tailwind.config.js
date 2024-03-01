@@ -41,6 +41,9 @@ export default {
         },
         orange: {
           DEFAULT: 'var(--orange-default)',
+        },
+        brown: {
+          DEFAULT: 'var(--brown-default)',
         }
       },
     },

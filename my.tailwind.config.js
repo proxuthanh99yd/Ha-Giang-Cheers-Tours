@@ -2,6 +2,9 @@
 export const myTailwindConfig = {
     theme: {
         extend: {
+            fontSize: {
+                md: '0.9375rem',
+            },
             spacing: {
                 1.25: '0.3125rem', // 5px
                 1.75: '0.4375rem', // 7px
