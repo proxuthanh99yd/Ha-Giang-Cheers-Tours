@@ -117,7 +117,7 @@ export default function Hero({ data }: IHeroProps) {
   const total =
     data[selected].basicBike * basicPax + data[selected].bigBike * bigPax;
   return (
-    <section className="">
+    <section className="h-screen w-full object-cover">
       <img
         src="/images/hero-bg.jpeg"
         alt=""

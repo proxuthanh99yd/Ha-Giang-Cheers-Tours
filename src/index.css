@@ -36,7 +36,7 @@
   }
 
   .main-container {
-    @apply w-container-size mx-auto max-w-full px-6 xl:px-0;
+    @apply mx-auto w-container-size max-w-full px-6 xl:px-0;
   }
 
   .triangle {
