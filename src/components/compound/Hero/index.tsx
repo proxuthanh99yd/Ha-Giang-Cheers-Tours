@@ -21,7 +21,7 @@ const PersonIcon = () => (
     height={28}
     viewBox="0 0 21 28"
     fill="none"
-    className="h-[2rem] w-[2rem] max-lg:mr-[2.13rem] max-lg:h-[4.33rem] max-lg:w-[4.33rem] max-md:h-[5.33rem] max-md:w-[5.33rem]"
+    className="size-6 md:size-12 xl:size-16"
   >
     <path
       d="M16.578 19.933l-.445-.723-.649-1.438-1.53-.956H7.061l-1.53.956L4 17.633l-1.267.338A3.012 3.012 0 00.5 20.877v4.718l6.109 2.406h3.899l7.17-3.361.323-2.326c0-1.36-.108-2.03-1.423-2.381z"
@@ -73,7 +73,7 @@ const LocationIcon = () => (
     height={28}
     viewBox="0 0 25 28"
     fill="none"
-    className="h-[2rem] w-[2rem] max-lg:mr-[2.06rem] max-lg:h-[4.33rem] max-lg:w-[4.33rem] max-md:h-[5.33rem] max-md:w-[5.33rem]"
+    className="size-6 md:size-12 xl:size-16"
   >
     <path
       d="M20.717 3.409c-4.545-4.545-11.887-4.545-16.374 0a11.536 11.536 0 000 16.374L12.5 28l8.158-8.158c4.545-4.545 4.545-11.888.058-16.433z"
@@ -117,27 +117,32 @@ export default function Hero({ data }: IHeroProps) {
   const total =
     data[selected].basicBike * basicPax + data[selected].bigBike * bigPax;
   return (
-    <section className="h-screen w-full object-cover">
+    <section id="hero" className="h-screen w-full object-cover">
       <img
         src="/images/hero-bg.jpeg"
         alt=""
         className="absolute top-0 h-screen w-full object-cover"
       />
       <div className="flex-center absolute top-0 h-screen w-full">
-        <div className="-translate-x-1/3">
-          <p className="font-heavitas text-7xl text-white">Back to</p>
-          <p className="translate-x-1/2 font-tomatoes text-9xl text-white">
+        <div
+          data-aos="zoom-in-up"
+          className="-translate-x-1/3 -translate-y-full md:translate-y-0"
+        >
+          <p className="font-heavitas text-4xl text-white md:text-7xl">
+            Back to
+          </p>
+          <p className="translate-x-1/2 font-tomatoes text-5xl text-white md:text-9xl">
             nature
           </p>
         </div>
       </div>
-      <div className="absolute bottom-10.75 left-1/2 flex w-full max-w-7xl -translate-x-1/2 items-center justify-between rounded-xl bg-white px-8 py-5.25 uppercase">
-        <div className="space-y-2">
-          <span className="text-md text-gray">Tour</span>
+      <div className="absolute bottom-10.75 left-1/2 flex w-full max-w-7xl -translate-x-1/2 flex-col items-start justify-between gap-x-10 gap-y-4 rounded-xl bg-white px-8 py-5.25 uppercase lg:flex-row lg:items-center">
+        <div className="w-full space-y-2">
+          <span className="text-xs text-gray md:text-md">Tour</span>
           <div className="text-lg font-bold">
             <div className="flex items-center">
               <LocationIcon />
-              <div className="relative flex cursor-pointer items-center gap-10 rounded-md px-2 py-1.5 hover:bg-[#f1f5f9]">
+              <div className="relative flex flex-1 cursor-pointer items-center justify-between gap-10 rounded-md px-2 py-1.5 text-sm hover:bg-[#f1f5f9] md:text-base">
                 <button
                   onClick={() => setDropdown((open) => !open)}
                   className="absolute inset-0"
@@ -172,60 +177,66 @@ export default function Hero({ data }: IHeroProps) {
             </div>
           </div>
         </div>
-        <span className="block h-9 border" />
-        <div className="space-y-2">
-          <span className="text-md text-gray">EASY RIDER - BASIC BIKE</span>
-          <div className="text-lg font-bold">
-            <div className="flex items-center gap-2">
-              <PersonIcon />
-              <div className="flex items-center gap-4">
-                {basicPax} pax
-                <button
-                  onClick={handleDecrementBasicPax}
-                  className="flex-center size-10 rounded-full shadow-md shadow-slate-200 drop-shadow-md"
-                >
-                  <IoRemoveOutline className="text-2xl" />
-                </button>
-                <button
-                  onClick={handleIncrementBasicPax}
-                  className="flex-center size-10 rounded-full shadow-md shadow-slate-200 drop-shadow-md"
-                >
-                  <IoAddOutline />
-                </button>
+        <span className="block w-full border lg:h-9 lg:w-min" />
+        <div className="flex w-full items-center justify-between">
+          <div className="space-y-2">
+            <span className="text-xs text-gray md:text-md">
+              EASY RIDER - BASIC BIKE
+            </span>
+            <div className="text-sm font-bold md:text-lg">
+              <div className="flex items-center gap-2">
+                <PersonIcon />
+                <div className="flex items-center gap-4">
+                  {basicPax} pax
+                  <button
+                    onClick={handleDecrementBasicPax}
+                    className="flex-center size-8 rounded-full shadow-md shadow-slate-200 drop-shadow-md md:size-10"
+                  >
+                    <IoRemoveOutline className="text-lg md:text-2xl" />
+                  </button>
+                  <button
+                    onClick={handleIncrementBasicPax}
+                    className="flex-center size-8 rounded-full shadow-md shadow-slate-200 drop-shadow-md md:size-10"
+                  >
+                    <IoAddOutline className="text-lg md:text-2xl" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <span className="block h-9 border" />
-        <div className="space-y-2">
-          <span className="text-md text-gray">EASY RIDER - BIG BIKE</span>
-          <div className="text-lg font-bold">
-            <div className="flex items-center gap-2">
-              <PersonIcon />
-              <div className="flex items-center gap-4">
-                {bigPax} pax
-                <button
-                  onClick={handleDecrementBigPax}
-                  className="flex-center size-10 rounded-full shadow-md shadow-slate-200 drop-shadow-md"
-                >
-                  <IoRemoveOutline className="text-2xl" />
-                </button>
-                <button
-                  onClick={handleIncrementBigPax}
-                  className="flex-center size-10 rounded-full shadow-md shadow-slate-200 drop-shadow-md"
-                >
-                  <IoAddOutline />
-                </button>
+          <span className="hidden h-9 border lg:block" />
+          <div className="space-y-2">
+            <span className="text-xs text-gray md:text-md">
+              EASY RIDER - BIG BIKE
+            </span>
+            <div className="text-sm font-bold md:text-lg">
+              <div className="flex items-center gap-2">
+                <PersonIcon />
+                <div className="flex items-center gap-4">
+                  {bigPax} pax
+                  <button
+                    onClick={handleDecrementBigPax}
+                    className="flex-center size-8 rounded-full shadow-md shadow-slate-200 drop-shadow-md md:size-10"
+                  >
+                    <IoRemoveOutline className="text-lg md:text-2xl" />
+                  </button>
+                  <button
+                    onClick={handleIncrementBigPax}
+                    className="flex-center size-8 rounded-full shadow-md shadow-slate-200 drop-shadow-md md:size-10"
+                  >
+                    <IoAddOutline className="text-lg md:text-2xl" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <button
           disabled={!total}
-          className="flex-center flex-col rounded-lg bg-brown px-6.25 py-3.25 font-bold text-white disabled:bg-gray"
+          className="flex w-full items-center justify-between rounded-lg bg-brown px-6.25 py-3.25 font-bold text-white disabled:bg-gray md:flex-col md:justify-center lg:w-fit"
         >
           <span className="text-[28px]">${total}</span>
-          <span className="text-lg">Book now</span>
+          <span className="text-nowrap text-lg">Book now</span>
         </button>
       </div>
     </section>

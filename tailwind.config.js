@@ -8,6 +8,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/rizzui/dist/*.{js,ts,jsx,tsx}",
   ],
   presets: [myTailwindConfig],
   theme: {
@@ -50,6 +51,7 @@ export default {
   },
   plugins: [
     require('tailwind-scrollbar')({ nocompatible: true }),
+    require("@tailwindcss/forms")
   ],
 }
 

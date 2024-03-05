@@ -15,7 +15,7 @@ export const CONTACT_US = [
     route: "/",
   },
   {
-    id: "5b2f7809-6c66-592e-937b-19353aa46b6b",
+    id: "5b2f7809-6c66-592e-937b-19353aa46b6c",
     label: "+84 85 668 0000(Kevin)",
     icon: <FooterPhoneIcon />,
     route: "/",

@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <>
       <Header data={MENU} />
-      <main>
+      <main className="overflow-hidden">
         <Outlet />
       </main>
       <Footer />

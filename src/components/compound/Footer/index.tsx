@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { ALL_TOUR, CHEERS_TOURS, CONTACT_US } from "./constants";
+import { ReactNode } from "react";
 
 interface IFooterItemsProps {
   data: {
     id: string;
     label: string;
-    icon: JSX.Element;
+    icon: ReactNode;
     route: string;
   }[];
   title: string;
@@ -26,20 +27,20 @@ const FooterItems = ({ data, title }: IFooterItemsProps) => (
 
 export default function Footer() {
   return (
-    <footer className="relative flex items-center bg-[#fffdf6] px-24 pb-96 pt-36">
+    <footer className="relative flex flex-col items-center gap-10 bg-[#fffdf6] px-24 pb-96 pt-16 lg:flex-row lg:justify-between lg:pt-36 xl:gap-32">
       <img
         className="absolute bottom-0 left-0 h-full w-full object-cover"
         src="/images/bg-footer.png"
         alt="bg-footer"
       />
-      <div className="relative z-10 mr-60">
+      <div className="relative z-10">
         <img
-          className="size-64 object-contain"
+          className="size-44 object-contain xl:size-56"
           src="/images/logo-footer.png"
           alt="logo-footer"
         />
       </div>
-      <div className="relative z-10 flex flex-1 justify-between text-md">
+      <div className="relative z-10 mt-10 grid flex-1 gap-10 text-md md:grid-cols-2 lg:mt-0 lg:grid-cols-3">
         <FooterItems title="Contact us" data={CONTACT_US} />
         <FooterItems title="All Tour" data={ALL_TOUR} />
         <FooterItems title="Cheers tours" data={CHEERS_TOURS} />
