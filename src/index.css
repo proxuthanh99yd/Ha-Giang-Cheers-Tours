@@ -31,7 +31,9 @@
 
     --container-size: 1440px;
   }
-
+  html {
+    font-size: 1vw;
+  }
   .flex-center {
     @apply flex items-center justify-center;
   }
